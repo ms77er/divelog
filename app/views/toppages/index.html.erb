@@ -3,22 +3,25 @@
     <div class="cover-inner">
       <div class="cover-contents">
         <h1>Log your dives on a cloud</h1>
-        <a href="" class="btn btn-success btn-lg">Log In </a>
+          <% unless logged_in? %>
+            <%= link_to 'Log In', login_path, class: 'btn btn-success btn-lg' %>
+          <% end %>
       </div>
     </div>
   </div>
 <% end %>
-
-    <div class="item">
+    <div>
       <div class="panel panel-default">
         <div class="panel-heading text-center">
           <b>Information</b>
         </div>
         <div class="panel-body">
-          <p class="item-title">test</p>
-          <p class="item-title">test</p>
-          <p class="item-title">test</p>
-          <p class="item-title">test</p>
+          スキューバダイビングのダイブログを記録するサービスです。
+          初めての利用時は、「Sign Up」からユーザー登録をしてください。
         </div>
       </div>
-    </div>  
+    </div>
+
+    <center>
+    <div class="fb-share-button" data-href="https://divelogcloud.herokuapp.com/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdivelogcloud.herokuapp.com%2F&amp;src=sdkpreparse">シェア</a></div>
+    </center>

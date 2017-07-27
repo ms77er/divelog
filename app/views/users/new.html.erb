@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-xs-offset-3 col-xs-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Sign Up</div>
+      <div class="panel-body">
+        <%= form_for(@user) do |f| %>
+          <div class="form-group">
+            <%= f.label :name, 'Name' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :email, 'Mail address' %>
+            <%= f.email_field :email, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :LicenceNo, 'Divers Licence No' %>
+            <%= f.text_field :LicenceNo, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password, 'Password' %>
+            <%= f.password_field :password, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password_confirmation, 'Password（Confirmation）' %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+
+          <div class="text-right">
+            <%= f.submit 'Submit', class: 'btn btn-success' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
