@@ -9,7 +9,7 @@ class DivingsController < ApplicationController
 
     if @diving.save
       flash[:success] = '正常に登録されました'
-      render :new    
+      redirect_to @diving
     else
       flash.now[:danger] = '登録されませんでした'
       render :new
