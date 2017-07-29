@@ -5,53 +5,53 @@
       <div class="panel-body">
         <%= form_for(@diving) do |f| %>
           <div class="form-group">
-            <%= f.label :DiveNo, 'DiveNo' %>
-            <%= f.label :DiveNo, @divings.DiveNo, class: 'form-control' %>
+            <%= f.label :DiveNo, 'DiveNo' %>:
+            <%= @divings.DiveNo %>
           </div> 
       
           <div class="form-group">
-            <%= f.label :DiveDate, 'Date' %>
-            <%= f.label :DiveDate, @divings.DiveDate, class: 'form-control' %>
+            <%= f.label :DiveDate, 'Date' %>:
+            <%= @divings.DiveDate %>
           </div>
 
           <div class="form-group">
-            <%= f.label :DiveIn, 'Time In' %>
-            <%= f.label :DiveIn, @divings.DiveIn, class: 'form-control' %>
+            <%= f.label :DiveIn, 'Time In' %>:
+            <%= @divings.DiveIn %>
           </div>
 
           <div class="form-group">
-            <%= f.label :DiveOut, 'Time Out' %>
-            <%= f.label :DiveOut, @divings.DiveOut, class: 'form-control' %>
+            <%= f.label :DiveOut, 'Time Out' %>:
+            <%= @divings.DiveOut %>
           </div>
 
           <div class="form-group">
-            <%= f.label :location, 'Location/Point' %>
-            <%= f.label :location, @divings.location, class: 'form-control' %>
+            <%= f.label :location, 'Location/Point' %>:
+            <%= @divings.location %>
           </div>
 
           <div class="form-group">
-            <%= f.label :MaxDepth, 'Max depth' %>
-            <%= f.label :MaxDepth, @divings.MaxDepth, class: 'form-control' %>
+            <%= f.label :MaxDepth, 'Max depth' %>:
+            <%= @divings.MaxDepth %>
           </div>
 
           <div class="form-group">
-            <%= f.label :AvgDepth, 'Average depth' %>
-            <%= f.label :AvgDepth, @divings.AvgDepth, class: 'form-control' %>
+            <%= f.label :AvgDepth, 'Average depth' %>:
+            <%= @divings.AvgDepth %>
           </div>
 
           <div class="form-group">
-            <%= f.label :WaterTemp, 'Water temparature' %>
-            <%= f.label :WaterTemp, @divings.WaterTemp, class: 'form-control' %>
+            <%= f.label :WaterTemp, 'Water temparature' %>:
+            <%= @divings.WaterTemp %>
           </div>
 
           <div class="form-group">
-            <%= f.label :Transparancy, 'Transparancy' %>
-            <%= f.label :Transparancy, @divings.Transparancy, class: 'form-control' %>
+            <%= f.label :Transparancy, 'Transparancy' %>:
+            <%= @divings.Transparancy %>
           </div>
 
           <div class="form-group">
-            <%= f.label :Memo, 'Memo' %>
-            <%= f.label :Memo, @divings.Memo, class: 'form-control' %>
+            <%= f.label :Memo, 'Memo' %>:
+            <%= @divings.Memo %>
           </div>
         <% end %>
         </form>
