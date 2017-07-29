@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @diving = @user.divings.build  # form_for 用
     @divings = @user.divings.order('created_at DESC').page(params[:page])
+    @count_divings = @user.divings.count
   end
 
   def new

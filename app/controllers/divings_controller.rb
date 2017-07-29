@@ -16,6 +16,13 @@ class DivingsController < ApplicationController
     end
   end  
   
+  def show
+    @user = current_user
+    @diving = @user.divings.build  # form_for 用
+    @divings = @user.divings.find_by(id: params[:id])
+  end
+  
+  
   def diving_params
     params.require(:diving).permit(:user_id, :DiveNo, :DiveDate, :DiveIn, :DiveOut, :location, :MaxDepth, :AvgDepth, :WaterTemp, :Transparancy, :Memo)
   end

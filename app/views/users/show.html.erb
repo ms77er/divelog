@@ -5,7 +5,8 @@
   <div class="name text-center">
     <h1><%= @user.name %></h1>
     email:<%= @user.email %><br>
-    Licence No:<%= @user.LicenceNo %>
+    Licence No:<%= @user.LicenceNo %><br>
+    <%= @count_divings %> dives
   </div>
   <BR>
   <div class="name text-center">  
@@ -24,7 +25,9 @@
       <% user = diving.user %>
 
         <tr>
-          <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveNo %></td>
+          <td style="border-bottom: 1px solid #ddd;">
+            <%= link_to diving.DiveNo, diving_path(diving.id) %>
+          </td>
           <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveDate %></td>
           <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveIn %></td>
           <td style="border-bottom: 1px solid #ddd;"><%= diving.location %></td>
