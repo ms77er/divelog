@@ -4,5 +4,36 @@
   </div>
   <div class="name text-center">
     <h1><%= @user.name %></h1>
+    email:<%= @user.email %><br>
+    Licence No:<%= @user.LicenceNo %>
+  </div>
+  <BR>
+  <div class="name text-center">  
+  <%= link_to 'Log new dive', new_diving_path, class: 'btn btn-primary btn-sm' %>
+  </div>
+  <div style="margin-top: 30px; margin-bottom:50px;">
+      <center>
+      <table width=80%>
+        <tr>
+          <th style="border-bottom: 1px solid #ddd;">DiveNo</th>
+          <th style="border-bottom: 1px solid #ddd;">Date</th>
+          <th style="border-bottom: 1px solid #ddd;">Time In</th>
+          <th style="border-bottom: 1px solid #ddd;">Location</th>
+        </tr>
+    <% @divings.each do |diving| %>
+      <% user = diving.user %>
+
+        <tr>
+          <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveNo %></td>
+          <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveDate %></td>
+          <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveIn %></td>
+          <td style="border-bottom: 1px solid #ddd;"><%= diving.location %></td>
+        </tr> 
+    <% end %>
+      </table>  
+      </center>
+
+    <%= paginate @divings %>
+
   </div>
 </div>

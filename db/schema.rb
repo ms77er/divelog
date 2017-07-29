@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727213043) do
+ActiveRecord::Schema.define(version: 20170729001718) do
+
+  create_table "divings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "DiveNo"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "location"
+    t.date     "DiveDate"
+    t.time     "DiveIn"
+    t.time     "DiveOut"
+    t.integer  "MaxDepth",     limit: 2
+    t.integer  "AvgDepth",     limit: 2
+    t.integer  "WaterTemp",    limit: 2
+    t.integer  "Transparancy", limit: 2
+    t.string   "Memo"
+    t.index ["user_id"], name: "index_divings_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -21,4 +38,5 @@ ActiveRecord::Schema.define(version: 20170727213043) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "divings", "users"
 end

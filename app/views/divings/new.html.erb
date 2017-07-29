@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-xs-offset-2 col-xs-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">Log new dive</div>
+      <div class="panel-body">
+        <%= form_for(@diving) do |f| %>
+
+          <div class="form-group">
+            <%= f.hidden_field :user_id, class: 'form-control', :value =>current_user.id %>
+          </div>
+
+           <div class="form-group">
+            <%= f.label :DiveNo, 'DiveNo' %>
+            <%= f.text_field :DiveNo, class: 'form-control' %>
+          </div> 
+      
+          <div class="form-group">
+            <%= f.label :DiveDate, 'Date' %>
+            <%= f.date_field :DiveDate, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :DiveIn, 'Time In' %>
+            <%= f.time_field :DiveIn, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :DiveOut, 'Time Out' %>
+            <%= f.time_field :DiveOut, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :location, 'Location/Point' %>
+            <%= f.text_field :location, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :MaxDepth, 'Max depth' %>
+            <%= f.text_field :MaxDepth, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :AvgDepth, 'Average depth' %>
+            <%= f.text_field :AvgDepth, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :WaterTemp, 'Water temparature' %>
+            <%= f.text_field :WaterTemp, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :Transparancy, 'Transparancy' %>
+            <%= f.text_field :Transparancy, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :Memo, 'Memo' %>
+            <%= f.text_area :Memo, class: 'form-control' %>
+          </div>
+
+          <div class="text-right">
+            <%= f.submit 'Submit', class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
