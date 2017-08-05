@@ -25,7 +25,6 @@
     <% @divings.each do |diving| %>
       <% user = diving.user %>
         <tr>
-          
           <td style="border-bottom: 1px solid #ddd;"><%= link_to "View", diving_path(diving.id) %></td>
           <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveNo %></td>
           <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveDate %></td>
