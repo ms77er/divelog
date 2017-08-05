@@ -20,12 +20,12 @@
 
           <div class="form-group">
             <%= f.label :DiveIn, 'Time In' %>
-            <%= f.time_field :DiveIn, :value => @divingup.DiveIn.to_s(:time), class: 'form-control' %>
+            <%= f.time_field :DiveIn, :value => @divingup.DiveIn, class: 'form-control' %>
           </div>
 
           <div class="form-group">
             <%= f.label :DiveOut, 'Time Out' %>
-            <%= f.time_field :DiveOut, :value => @divingup.DiveOut.to_s(:time), class: 'form-control' %>
+            <%= f.time_field :DiveOut, :value => @divingup.DiveOut, class: 'form-control' %>
           </div>
 
           <div class="form-group">
