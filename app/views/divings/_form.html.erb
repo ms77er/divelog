@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Log new dive</div>
+      <div class="panel-body">
+        <%= form_for(@divingup) do |f| %>
+          <div class="form-group">
+            <%= f.hidden_field :user_id, class: 'form-control', :value =>current_user.id %>
+          </div>
+
+           <div class="form-group">
+            <%= f.label :DiveNo, 'DiveNo' %>
+            <%= f.text_field :DiveNo, :value => @divingup.DiveNo,  class: 'form-control' %>
+          </div> 
+      
+          <div class="form-group">
+            <%= f.label :DiveDate, 'Date' %>
+            <%= f.date_field :DiveDate, :value => @divingup.DiveDate, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :DiveIn, 'Time In' %>
+            <%= f.time_field :DiveIn, :value => @divingup.DiveIn.to_s(:time), class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :DiveOut, 'Time Out' %>
+            <%= f.time_field :DiveOut, :value => @divingup.DiveOut.to_s(:time), class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :location, 'Location/Point' %>
+            <%= f.text_field :location, :value => @divingup.location, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :MaxDepth, 'Max depth' %>
+            <%= f.text_field :MaxDepth, :value => @divingup.MaxDepth, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :AvgDepth, 'Average depth' %>
+            <%= f.text_field :AvgDepth, :value => @divingup.AvgDepth, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :WaterTemp, 'Water temparature' %>
+            <%= f.text_field :WaterTemp, :value => @divingup.WaterTemp, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :Transparancy, 'Transparancy' %>
+            <%= f.text_field :Transparancy, :value => @divingup.Transparancy, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :Memo, 'Memo' %>
+            <%= f.text_area :Memo, :value => @divingup.Memo, class: 'form-control' %>
+          </div>
+
+          <div class="text-right">
+            <%= f.submit 'Submit', class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

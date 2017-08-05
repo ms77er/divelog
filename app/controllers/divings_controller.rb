@@ -22,10 +22,29 @@ class DivingsController < ApplicationController
     @divings = @user.divings.find_by(id: params[:id])
   end
   
+  def update
+    @user = current_user
+    @diving = @user.divings.build  # form_for 用
+    @divingup = @user.divings.find_by(id: params[:id])
+    
+    if @divingup.update(diving_params)
+      flash[:success] = 'Updated successfully / 正常に更新されました'
+      redirect_to @divingup
+    else
+      flash.now[:danger] = 'Update error / 更新されませんでした'
+      render :edit
+    end
+  end
+
+  def edit
+    @user = current_user
+    @divingup =  @user.divings.find_by(id: params[:id])
+  end  
   
+  private
+
   def diving_params
     params.require(:diving).permit(:user_id, :DiveNo, :DiveDate, :DiveIn, :DiveOut, :location, :MaxDepth, :AvgDepth, :WaterTemp, :Transparancy, :Memo)
   end
-  
-  
+
 end

@@ -29,7 +29,7 @@
             <%= link_to diving.DiveNo, diving_path(diving.id) %>
           </td>
           <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveDate %></td>
-          <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveIn %></td>
+          <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveIn.to_s(:time) %></td>
           <td style="border-bottom: 1px solid #ddd;"><%= diving.location %></td>
         </tr> 
     <% end %>
