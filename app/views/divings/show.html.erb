@@ -18,12 +18,18 @@
 
           <div class="form-group">
             <%= f.label :DiveIn, 'Time In' %>:
-            <%= @divings.DiveIn %>
+            <% if @divings.DiveIn.nil? %>
+            <% else %>
+            <%= @divings.DiveIn.to_s(:time) %>
+            <% end %>
           </div>
 
           <div class="form-group">
             <%= f.label :DiveOut, 'Time Out' %>:
-            <%= @divings.DiveOut %>
+            <% if @divings.DiveOut.nil? %>
+            <% else %>
+            <%= @divings.DiveOut.to_s(:time) %>
+            <% end %>
           </div>
 
           <div class="form-group">

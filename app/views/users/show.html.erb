@@ -16,18 +16,24 @@
       <center>
       <table width=80%>
         <tr>
-          <th style="border-bottom: 1px solid #ddd;"></th>
           <th style="border-bottom: 1px solid #ddd;">DiveNo</th>
           <th style="border-bottom: 1px solid #ddd;">Date</th>
-          <th style="border-bottom: 1px solid #ddd;">Time In</th>
+          <th style="border-bottom: 1px solid #ddd;">Dive In</th>          
           <th style="border-bottom: 1px solid #ddd;">Location</th>
         </tr>
     <% @divings.each do |diving| %>
         <tr>
-          <td style="border-bottom: 1px solid #ddd;"><%= link_to "View", diving_path(diving.id) %></td>
-          <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveNo %></td>
+          <% if diving.DiveNo.empty? %>          
+            <td style="border-bottom: 1px solid #ddd;"><%= link_to "#", diving_path(diving.id) %></td>          
+          <% else %>        
+            <td style="border-bottom: 1px solid #ddd;"><%= link_to diving.DiveNo, diving_path(diving.id) %></td>          
+          <% end %>          
           <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveDate %></td>
-          <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveIn %></td>
+          <% if diving.DiveOut.nil? %>
+            <td style="border-bottom: 1px solid #ddd;"></td>
+          <% else %>
+            <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveIn.to_s(:time) %></td>
+          <% end %>
           <td style="border-bottom: 1px solid #ddd;"><%= diving.location %></td>
         </tr> 
     <% end %>
