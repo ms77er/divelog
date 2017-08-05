@@ -40,6 +40,15 @@ class DivingsController < ApplicationController
     @user = current_user
     @divingup =  @user.divings.find_by(id: params[:id])
   end  
+ 
+  def destroy
+    @user = current_user
+    @divings =  @user.divings.find_by(id: params[:id])
+    @divings.destroy
+
+    flash[:success] = 'Deleted successfully / 正常に削除されました'
+    redirect_to @user
+  end
   
   private
 

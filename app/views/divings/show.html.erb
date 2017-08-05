@@ -60,7 +60,8 @@
         </form>
       </div>
       <p align="center">
-              <%= link_to 'Edit', edit_diving_path(@divings.id), class: 'btn btn-default' %>
+              <%= link_to 'Edit', edit_diving_path(@divings.id), class: 'btn btn-primary' %>
+              <%= link_to 'Delete', @divings, class: 'btn btn-danger', method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
       </p>
     </div>
   </div>
