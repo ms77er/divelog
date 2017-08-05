@@ -6,7 +6,7 @@
     <h1><%= @user.name %></h1>
     email:<%= @user.email %><br>
     Licence No:<%= @user.LicenceNo %><br>
-    <%= @count_divings %> dives
+    Registered Dive number: <%= @count_divings %> 
   </div>
   <BR>
   <div class="name text-center">  
@@ -23,7 +23,6 @@
           <th style="border-bottom: 1px solid #ddd;">Location</th>
         </tr>
     <% @divings.each do |diving| %>
-      <% user = diving.user %>
         <tr>
           <td style="border-bottom: 1px solid #ddd;"><%= link_to "View", diving_path(diving.id) %></td>
           <td style="border-bottom: 1px solid #ddd;"><%= diving.DiveNo %></td>
