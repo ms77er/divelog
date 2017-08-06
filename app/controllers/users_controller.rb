@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
    before_action :require_user_logged_in
+   before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
   def show
     @user = User.find(params[:id])
@@ -24,9 +25,34 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(params[:id]) 
+    
+    if @user.update(user_params)
+      flash[:success] = 'Updated successfully / 正常に更新されました'
+      redirect_to @user
+    else
+      flash.now[:danger] = 'Update error / 更新されませんでした'
+      render :edit
+    end
+    
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :LicenceNo, :password, :password_confirmation)
   end
+ 
+  def correct_user
+    @user = User.find(params[:id])
+    unless @user.id == current_user.id
+      redirect_to root_url
+    end
+  end 
+  
 end

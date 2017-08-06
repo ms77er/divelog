@@ -1,0 +1,40 @@
+<div class="row">
+  <div align="center" class="col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Edit User</div>
+      <div class="panel-body">
+        <%= form_for(@user) do |f| %>
+
+          <div align="left" class="form-group">
+            <%= f.label :name, 'Name' %>
+            <%= f.text_field :name, class: 'form-control', :value =>@user.name %>
+          </div>
+
+          <div align="left" class="form-group">
+            <%= f.label :email, 'Mail address' %>
+            <%= f.email_field :email, class: 'form-control' , :value =>@user.email %>
+          </div>
+
+          <div align="left" class="form-group">
+            <%= f.label :LicenceNo, 'Divers Licence No' %>
+            <%= f.text_field :LicenceNo, class: 'form-control' %>
+          </div>
+
+          <div align="left" class="form-group">
+            <%= f.label :password, 'Password' %>
+            <%= f.password_field :password, class: 'form-control', :value =>@user.password %>
+          </div>
+
+          <div align="left" class="form-group">
+            <%= f.label :password_confirmation, 'Password（Confirmation）' %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+
+          <div align="left" class="text-right">
+            <%= f.submit 'Submit', class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

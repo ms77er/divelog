@@ -1,5 +1,6 @@
 class DivingsController < ApplicationController
    before_action :require_user_logged_in
+   before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -57,5 +58,12 @@ class DivingsController < ApplicationController
   def diving_params
     params.require(:diving).permit(:user_id, :DiveNo, :DiveDate, :DiveIn, :DiveOut, :location, :MaxDepth, :AvgDepth, :WaterTemp, :Transparancy, :Memo)
   end
+
+  def correct_user
+    @divings = Diving.find(params[:id])
+    unless @divings.user_id == current_user.id
+      redirect_to root_url
+    end
+  end 
 
 end
