@@ -10,18 +10,23 @@
     </div>
   </div>
 <% end %>
-    <div>
+    <div align="center">
+    <div style="float:left" class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
       <div class="panel panel-default">
-        <div class="panel-heading text-center">
+        <div class="panel-heading">
           <b>Information</b>
         </div>
-        <div class="panel-body">
-          スキューバダイビングのダイブログを記録するサービスです。
-          初めての利用時は、「<%= link_to 'Sign Up', signup_path %>」からユーザー登録をしてください。
+        <div class="panel-body text-left">
+          <ul>
+          <li>EN: This is the application for scuba divers to log diving records online. Feel free to <%= link_to 'Sign Up', signup_path %> for free.(2017-Aug-05)</li>
+          <br>
+          <li>JP: スキューバダイビングのダイブログを記録するシンプルな無料サービスです。初めての利用時は、「<%= link_to 'Sign Up', signup_path %>」からユーザー登録をしてください。(2017-08-05)</li>
+          </ul>
         </div>
       </div>
     </div>
+    <div style="float:left" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdivelogcloud%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    </div>
+    </div>
 
-    <center>
-    <div class="fb-share-button" data-href="https://divelogcloud.herokuapp.com/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdivelogcloud.herokuapp.com%2F&amp;src=sdkpreparse">シェア</a></div>
-    </center>
